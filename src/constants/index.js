@@ -1,0 +1,1 @@
+export const logo = 'https://www.pngitem.com/pimgs/m/45-457333_skyline-logo-png-transparent-skyline-displays-png-download.png'
