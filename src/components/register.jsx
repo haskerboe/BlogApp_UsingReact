@@ -4,6 +4,7 @@ import { Input } from '../ui'
 import { useDispatch, useSelector } from 'react-redux'
 import { signUserFailure, signUserStart, signUserSuccess } from '../slice/auth'
 import AuthService from '../services/auth'
+import { ValidationError } from './'
 
 const Register = () => {
     const [name, setName] = useState('')
@@ -30,6 +31,7 @@ const Register = () => {
                 <form>
                     <img className="mb-4" src={logo} alt="" width="92" />
                     <h1 className="h3 mb-3 fw-normal">Please register</h1>
+                    <ValidationError />
                     <Input label={'Username'} state={name} setState={setName} />
                     <Input label={'Email Address'} state={email} setState={setEmail} />
                     <Input label={'Password'} state={password} setState={setPassword} type={'password'} />
