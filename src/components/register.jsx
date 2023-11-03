@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { logo } from '../constants'
 import { Input } from '../ui'
 import { useDispatch, useSelector } from 'react-redux'
-import { registerUserStart } from '../slice/auth'
+import { registerUserFailure, registerUserStart, registerUserSuccess } from '../slice/auth'
+import AuthService from '../services/auth'
 
 const Register = () => {
     const [name, setName] = useState('')
@@ -10,9 +11,19 @@ const Register = () => {
     const [password, setPassword] = useState('')
     const dispatch = useDispatch()
     const { isLoading } = useSelector(state => state.auth)
-    const registerHandler = e => {
+    const registerHandler = async (e) => {
         e.preventDefault()
         dispatch(registerUserStart())
+        const user = {
+            username: name, email, password
+        }
+        try {
+            const response = await AuthService.userRegister(user)
+            console.log(response);
+            dispatch(registerUserSuccess())
+        } catch (error) {
+            dispatch(registerUserFailure())
+        }
     }
     return (
         <div className='text-center mt-5'>
