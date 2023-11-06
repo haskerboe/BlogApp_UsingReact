@@ -22,6 +22,10 @@ export const authSlice = createSlice({
             state.isLoading = false
             state.error = action.payload
         },
+        logoutUser: state => {
+            state.user = null
+            state.loggedIn = false
+        }
 
     }
 })
@@ -29,6 +33,7 @@ export const authSlice = createSlice({
 export const {
     signUserStart,
     signUserFailure,
-    signUserSuccess
+    signUserSuccess,
+    logoutUser
 } = authSlice.actions
 export default authSlice.reducer
