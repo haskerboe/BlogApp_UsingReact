@@ -31,7 +31,7 @@ const Register = () => {
     }
     useEffect(() => {
         if (loggedIn) { navigate('/') }
-    }, [])
+    }, [loggedIn])
     return (
         <div className='text-center mt-5'>
             <main className="form-signin w-25 m-auto">
