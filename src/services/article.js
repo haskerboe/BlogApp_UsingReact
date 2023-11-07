@@ -5,7 +5,7 @@ const ArticleService = {
         const { data } = await axios.get('/articles')
         return data
     },
-    async getARticleDetail(slug) {
+    async getArticleDetail(slug) {
         const { data } = await axios.get(`/articles/${slug}`)
         return data
     }

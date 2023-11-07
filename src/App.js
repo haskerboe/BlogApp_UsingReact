@@ -14,7 +14,9 @@ const App = () => {
   const getUser = async () => {
     try {
       const response = await AuthService.getUser()
+      // console.log(response)
       dispatch(signUserSuccess(response.user))
+      // console.log(response)
     } catch (error) {
       console.log(error);
     }

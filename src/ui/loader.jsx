@@ -2,8 +2,8 @@ import React from 'react'
 
 const Loader = () => {
     return (
-        <div class="spinner-border d-block mx-auto" role="status">
-            <span class="sr-only"></span>
+        <div className="spinner-border d-block mx-auto" role="status">
+            <span className="sr-only"></span>
         </div>
     )
 }
