@@ -24,6 +24,7 @@ const App = () => {
       getUser()
     }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return (
     <div>
