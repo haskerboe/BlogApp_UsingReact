@@ -23,13 +23,18 @@ const Navbar = () => {
                 {loggedIn ? (
                     <>
                         <p className="me-3 py-2 m-0 link-body-emphasis text-decoration-none">{user.username}</p>
+                        <Link to={'/create-article'} className="me-3 py-2 link-body-emphasis text-decoration-none">
+                            Create
+                        </Link>
                         <button className="btn btn-outline-danger" onClick={logoutHandler}>Logout</button>
                     </>
                 ) : (
                     <>
+
                         <Link to={'/login'} className="me-3 py-2 link-body-emphasis text-decoration-none">
                             Login
                         </Link>
+
                         <Link to={'/register'} className="me-3 py-2 link-body-emphasis text-decoration-none">
                             Register
                         </Link>
